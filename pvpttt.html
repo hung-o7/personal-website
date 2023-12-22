@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Tic-Tac-Toe
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+        <link href="headerstyle.css" rel="stylesheet" type="text/css">
+
+        <style>
+            .mainbody{
+                display: grid;
+                grid-template-columns: 200px 200px 200px 1fr;
+                grid-template-rows: 200px 200px 200px;
+                margin-top: 235px;
+            }
+            .box{
+                border: solid;
+                text-align: center;
+                font-size: 150px;
+                font-weight: bold;
+                color: rgba(101,58,41,255);
+            }
+            .spaces{
+                background-color: rgba(252,247,241,255);
+                border: none;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: 1.5;
+                text-align: center;
+                font-size: 150px;
+                font-weight: bold;
+                color: rgba(101,58,41,255);
+            }
+            .spaces:hover{
+                cursor: pointer;
+            }
+        </style>
+
+    </head>
+    <body style="background-color: rgba(252,247,241,255)">
+        <header>
+            <p class="title">
+                MY PERSONAL WEBSITE
+            </p>
+        </header>
+        <nav class="headerbar">
+            <div class="headerblanks">
+                
+            </div>
+            <div>
+                <a href="personalwebsite/resume.html">
+                    <button class="headertitles">
+                        Resume
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/hungdoan1/" target="_blank">
+                    <button class="headertitles">
+                        LinkedIn
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="https://github.com/hung-o7" target="_blank">
+                    <button class="headertitles">
+                        GitHub
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="home.html">
+                    <button class="headertitles">
+                        Home
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="projects.html">
+                    <button class="headertitles">
+                        Projects
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="recipes.html">
+                    <button class="headertitles">
+                        Recipes
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="games.html">
+                    <button class="headertitles" style="background-color: rgba(101,58,41,255); color: rgba(252,247,241,255); font-weight: bold;">
+                        Games
+                    </button>
+                </a>
+            </div>
+            <div class="headerblanks">
+                
+            </div>
+        </nav>
+        <div class="mainbody">
+            <div id="button1" class="box" style="border-left: none; border-top: none;">
+                <button class="spaces" onclick="playermove(0)">
+                    
+                </button>
+            </div>
+            <div id="button2" class="box" style="border-top:none">
+                <button class="spaces" onclick="playermove(1)">
+                    
+                </button>
+            </div>
+            <div id="button3" class="box" style="border-right: none; border-top: none;">
+                <button class="spaces" onclick="playermove(2)">
+                    
+                </button>
+            </div>
+            <div class="info">
+
+            </div>
+            <div class="box" style="border-left: none;">
+                <button id="button4" class="spaces" onclick="playermove(3)">
+                    
+                </button>
+            </div>
+            <div class="box">
+                <button id="button5" class="spaces" onclick="playermove(4)">
+                    
+                </button>
+            </div>
+            <div class="box" style="border-right: none;">
+                <button id="button6" class="spaces" onclick="playermove(5)">
+                    
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <p>
+                        X Wins:
+                    </p>
+                    <p id="x">
+                        0
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        O Wins:
+                    </p>
+                    <p id="o">
+                        0
+                    </p>
+                </div>
+            </div>
+            <div class="box" style="border-left: none; border-bottom: none;">
+                <button id="button7" class="spaces" onclick="playermove(6)">
+                    
+                </button>
+            </div>
+            <div class="box" style="border-bottom: none;">
+                <button id="button8" class="spaces" onclick="playermove(7)">
+                    
+                </button>
+            </div>
+            <div class="box" style="border-right: none; border-bottom: none;">
+                <button id="button9" class="spaces" onclick="playermove(8)">
+                    
+                </button>
+            </div>
+            <div class="info">
+
+            </div>
+        </div>
+        <script>
+            var xWins = 0;
+            var oWins = 0;
+            var b = ["a", "b", "a", "b", "a", "b", "a", "b", "a"];
+            var boxes = document.getElementsByClassName("spaces");
+            var totalMoves = 0;
+
+            function checkWinner(){
+                outputX = document.getElementById("x");
+                outputO = document.getElementById("o");
+
+                if(b[0] == b[1] && b[1] == b[2]){
+                    if(b[0] == "O"){
+                        oWins += 1;
+                        resetGame();
+                    }
+                    if(b[0] == "X"){
+                        xWins += 1;
+                        resetGame();
+                    }
+                }
+                else if(b[3] == b[4]&& b[4] == b[5]){
+                    if(b[3] == "O"){
+                        oWins += 1;
+                        resetGame();
+                    }
+                    if(b[3] == "X"){
+
+                        xWins += 1;
+                        resetGame();
+                    }
+                }
+                else if(b[6] == b[7] && b[7] == b[8]){
+                    if(b[7] == "O"){
+                        oWins += 1;
+                        resetGame();
+                    }
+                    if(b[7] == "X"){
+                        xWins += 1;
+                        resetGame();
+                    }
+                }
+                else if(b[0] == b[3] && b[3] == b[6]){
+                    if(b[0] == "O"){
+                        oWins += 1;
+                        resetGame();
+                    }
+                    if(b[0] == "X"){
+                        xWins += 1;
+                        resetGame();
+                    }
+                }
+                else if(b[1] == b[4] && b[4] == b[7]){
+                    if(b[1] == "O"){
+                        oWins += 1;
+                        resetGame();
+                    }
+                    if(b[1] == "X"){
+                        xWins += 1;
+                        resetGame();
+                    }
+                }
+                else if(b[2] == b[5] && b[5] == b[8]){
+                    if(b[2] == "O"){
+                        oWins += 1;
+                        resetGame();
+                    }
+                    if(b[2] == "X"){
+                        xWins += 1;
+                        resetGame();
+                    }
+                }
+                else if(b[0] == b[4]&& b[4] == b[8]){
+                    if(b[0] == "O"){
+                        oWins += 1;
+                        resetGame();
+                    }
+                    if(b[0] == "X"){
+                        xWins += 1;
+                        resetGame();
+                    }
+                }
+                else if(b[2] == b[4] && b[4] == b[6]){
+                    if(b[2] == "O"){
+                        oWins += 1;
+                        resetGame();
+                    }
+                    if(b[2] == "X"){
+                        xWins += 1;
+                        resetGame();
+                    }
+                }
+
+                outputX.textContent = xWins;
+                outputO.textContent = oWins;
+            }
+            function resetGame(){
+                for(var i = 0; i < 9; i++){
+                    b[i] = "L";
+                    boxes[i].textContent = " ";
+                    boxes[i].disabled = false;
+                }
+                totalMoves = 0;
+            }
+            function playermove(boxNum){
+                boxes[boxNum].disabled = true;
+
+                if(totalMoves == 8){
+                    b[boxNum] = "X";
+                    boxes[boxNum].textContent = "X";
+                    checkWinner();
+                    resetGame();
+                }
+                else if((totalMoves % 2) == 1){
+                    b[boxNum] = "O";
+                    boxes[boxNum].textContent = "O";
+                    totalMoves += 1;
+                    checkWinner();
+                }
+                else if((totalMoves % 2) == 0){
+                    b[boxNum] = "X";
+                    boxes[boxNum].textContent = "X";
+                    totalMoves += 1;
+                    checkWinner(); 
+                }
+            }
+        </script>
+    </body>
+</html>

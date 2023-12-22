@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Games
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+        <link href="headerstyle.css" rel="stylesheet" type="text/css">
+
+        <style>
+            .body{
+                padding-top: 40px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                margin-left: 80px;
+                margin-right: 80px;
+            }
+            .gameinfo{
+                display: grid;
+                grid-template-rows: 200px 50px 20px 40px;
+
+            }
+            .gamepic{
+                height: 200px;
+                padding-left: 60px;
+            }
+            .gametitle{
+                text-align: center;
+                font-weight: bold;
+            }
+            .difficulty{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                padding-bottom: 10px;
+            }
+            .diffChosen{
+                background-color: rgba(101,58,41,255);
+                color: rgba(252,247,241,255); 
+                font-weight: bold;
+                margin-left: 22px;
+                margin-right: 22px;
+                font-size: 17px;
+                font-weight: bold;
+                cursor: pointer;
+                border: none;
+                font-family: Quicksand, Arial, Helvetica, sans-serif;
+                border-radius: 8px;
+            }
+        </style>
+    </head>
+    <body style="background-color: rgba(252,247,241,255)">
+        <div style="display: grid; grid-template-rows: 80px 80px 1fr;">
+            <header>
+                <p class="title">
+                    MY PERSONAL WEBSITE
+                </p>
+            </header>
+            <nav class="headerbar">
+                <div class="headerblanks">
+                    
+                </div>
+                <div>
+                    <a href="resume.html">
+                        <button class="headertitles">
+                            Resume
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.linkedin.com/in/hungdoan1/" target="_blank">
+                        <button class="headertitles">
+                            LinkedIn
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://github.com/hung-o7" target="_blank">
+                        <button class="headertitles">
+                            GitHub
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <a href="home.html">
+                        <button class="headertitles">
+                            Home
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <a href="projects.html">
+                        <button class="headertitles">
+                            Projects
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <a href="recipes.html">
+                        <button class="headertitles">
+                            Recipes
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <a href="games.html">
+                        <button class="headertitles" style="background-color: rgba(101,58,41,255); color: rgba(252,247,241,255); font-weight: bold;">
+                            Games
+                        </button>
+                    </a>
+                </div>
+                <div class="headerblanks">
+                    
+                </div>
+            </nav>
+            <div class="body">
+                <div class="gameinfo">
+                    <div class="picture">
+                        <img class="gamepic" src="gamepics/tickitytackitytoe.png">
+                    </div>
+                    <div class="gametitle">
+                        <p>
+                            tic-tac-toe
+                        </p>
+                    </div>
+                    <div class="difficulty">
+                        <div>
+                            <button id="easydiff" class="button" style="margin-left: 120px;" onclick="buttonEasy()">
+                                PvP
+                            </button>
+                        </div>
+                        <div>
+                            <button id="harddiff" class="button" onclick="buttonHard()" style="margin-left: 0px;">
+                                Player vs Robot
+                            </button>
+                        </div>
+                    </div>
+                    <div class="playbutton" style="display: flex; justify-content: center; align-items: center; padding-top: 0px;">
+                        <a>
+                            <button class="button" onclick="tttplay()" style="margin-top: 10px;">
+                                play!
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function buttonEasy(){
+                var easyButton = document.getElementById("easydiff");
+                var hardButton = document.getElementById("harddiff");
+
+                if(easyButton.classList.contains("button")){
+                    easyButton.classList.remove("button");
+                    easyButton.classList.add("diffChosen");
+                    hardButton.classList.remove("diffChosen");
+                    hardButton.classList.add("button");
+                }
+                else{
+                    easybutton.classList.remove("diffChosen");
+                    easyButton.classList.add("button");
+                }
+            }
+            function buttonHard(){
+                var hardButton = document.getElementById("harddiff");
+                var easyButton = document.getElementById("easydiff");
+
+                if(hardButton.classList.contains("button")){
+                    hardButton.classList.remove("button");
+                    hardButton.classList.add("diffChosen");
+                    easyButton.classList.remove("diffChosen");
+                    easyButton.classList.add("button");
+                }
+                else{
+                    hardbutton.classList.remove("diffChosen");
+                    hardButton.classList.add("button");
+                }
+            }
+            function tttplay(){
+                var hardButton = document.getElementById("harddiff");
+                var easyButton = document.getElementById("easydiff");
+
+                if(hardButton.classList.contains("diffChosen")){
+                    window.location.href= 'robotttt.html';
+                }
+                else if(easyButton.classList.contains("diffChosen")){
+                    window.location.href='pvpttt.html';
+                }
+            }
+        </script>
+    </body>
+</html>
