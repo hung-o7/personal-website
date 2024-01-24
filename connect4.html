@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Connect 4
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+        <link href="headerstyle.css" rel="stylesheet" type="text/css">
+
+
+        <style>
+            main{
+                display: grid;
+                grid-template-columns: 1fr 770px 1fr;
+                margin-top: 235px;
+            }
+            section{
+                display: grid;
+                grid-template-columns: 110px 110px 110px 110px 110px 110px 110px;
+                grid-template-rows: 110px 110px 110px 110px 110px 110px;
+            }
+            .box{
+                background-color:rgba(252,247,241,255);
+                border-radius: 50%;
+                z-index: 3;
+            }
+            .bottomsheet{
+                position:absolute;
+                border: 20px;
+                top: 0;
+                left: 575px;
+            }
+            .topsheet{
+            }
+            .background{
+                background-color: black;
+                z-index: 2;
+            }
+            .space{
+                background-color: rgba(252,247,241,255);
+                border: none;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                z-index: 1;
+            }
+            .space:hover{
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body style="background-color: rgba(252,247,241,255)">
+        <header>
+            <p class="title">
+                MY PERSONAL WEBSITE / PORTFOLIO
+            </p>
+        </header>
+        <nav class="headerbar">
+            <div class="headerblanks">
+                
+            </div>
+            <div>
+                <a href="resume.html">
+                    <button class="headertitles">
+                        Resume
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/hungdoan1/" target="_blank">
+                    <button class="headertitles">
+                        LinkedIn
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="https://github.com/hung-o7" target="_blank">
+                    <button class="headertitles">
+                        GitHub
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="index.html">
+                    <button class="headertitles">
+                        Home
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="projects.html">
+                    <button class="headertitles">
+                        Projects
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="recipes.html">
+                    <button class="headertitles">
+                        Recipes
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="games.html">
+                    <button class="headertitles" style="background-color: rgba(110,58,41,255); color: rgba(252,247,241,255); font-weight: bold;">
+                        Games
+                    </button>
+                </a>
+            </div>
+            <div class="headerblanks">
+                
+            </div>
+        </nav>
+        <main class="topsheet">
+            <div class="blankspace">
+                
+            </div>
+            <section>
+<!-- 1st Row-->
+                <div class="box">
+                    <button id="box42" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box41" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box40" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box39" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box38" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box37" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box36" class="space">
+
+                    </button>
+                </div>
+<!-- 2nd Row-->
+                <div class="box">
+                    <button id="box35" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box34" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box33" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box32" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box31" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box30" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box29" class="space">
+
+                    </button>
+                </div>
+<!-- 3rd Row-->
+                <div class="box">
+                    <button id="box28" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box27" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box26" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box25" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box24" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box23" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box22" class="space">
+
+                    </button>
+                </div>
+<!-- 4th Row-->
+                <div class="box">
+                    <button id="box21" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box20" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box19" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box18" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box17" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box16" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box15" class="space">
+
+                    </button>
+                </div>
+<!-- 5th Row-->
+                <div class="box">
+                    <button id="box14" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box13" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box12" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box11" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box10" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box9" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box8" class="space">
+
+                    </button>
+                </div>
+<!-- 6th Row-->
+                <div class="box">
+                    <button id="box7" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box6" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box5" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box4" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box3" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box2" class="space">
+
+                    </button>
+                </div>
+                <div class="box">
+                    <button id="box1" class="space">
+
+                    </button>
+                </div>
+                
+            </section>
+            <div class="blankspace">
+                
+            </div>
+        </main>
+        <main class="bottomsheet">
+            <div class="blankspace">
+                
+            </div>
+            <section>
+<!-- 1st Row-->
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+<!-- 2nd Row-->
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+<!-- 3rd Row-->
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+<!-- 4th Row-->
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+<!-- 5th Row-->
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+<!-- 6th Row-->
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+
+                </div>
+                <div class="background">
+                    
+                </div>
+                <div class="background">
+
+                </div>
+                
+            </section>
+            <div class="blankspace">
+                
+            </div>
+        </main>
