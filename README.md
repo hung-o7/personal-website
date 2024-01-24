@@ -6,4 +6,4 @@ This project showcases various recipes that I've cooked and random projects I wi
 My personal website used to practice HTML, CSS, and JavaScript.
 
 ## Usage
-You can use my code for inspiration and if you do, I wish you good luck!
+You can use my code for inspiration and if you do, I wish you good luck on your projects!
